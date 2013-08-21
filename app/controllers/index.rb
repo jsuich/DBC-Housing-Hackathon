@@ -17,7 +17,10 @@ get '/auth' do
   @access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
   # our request token is only valid until we use it to get an access token, so let's delete it from our session
   @user = User.find_or_create_by_username(username: @access_token.params[:screen_name],
-          oauth_token: params[:oauth_token], oauth_secret: params[:oauth_verifier])
+          oauth_token: @access_token.token, oauth_secret: @access_token.secret)
+  p @access_token
+  p @user
+
   session[:user_id] = @user.id
   session.delete(:request_token)
 
@@ -28,7 +31,10 @@ end
 post '/send_tweet' do 
   @user = User.find(session[:user_id])
   @tweet = Tweet.create(body: params[:body])
-  @user.tweets << @tweet 
+  @user.tweets << @tweet
+  client = twitter_client
+
+  client.update(@tweet.body) 
 
   erb :index 
 end
