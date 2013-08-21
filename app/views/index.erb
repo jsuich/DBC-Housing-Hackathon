@@ -8,7 +8,7 @@
     # user logged-in, we should show the sign-in button.
   %>
   <% if @access_token %>
-    <div>
+    <div class="access-info">
       <p>
         <strong>token:</strong> <%= @access_token.token %><br>
         <strong>secret:</strong> <%= @access_token.secret %><br>
@@ -22,3 +22,5 @@
   <% end %>
   
 </div>
+
+
