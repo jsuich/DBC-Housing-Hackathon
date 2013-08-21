@@ -27,5 +27,6 @@ end
 
 post '/send_tweet' do 
   @user = User.find(session[:user_id])
-  @body = 
+  p @user.username
+  p params 
 end
