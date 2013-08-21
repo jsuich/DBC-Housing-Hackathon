@@ -9,7 +9,8 @@
   %>
   <% if current_user %>
     <div class="access-info">
-      <form> <input type="text" name="body">
+      <form action="/send_tweet" method="post">
+        <input type="text" name="body">
       </form>
         <button><a href="/sign_out">Sign Out</a></button>
     

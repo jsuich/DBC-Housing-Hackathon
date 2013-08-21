@@ -22,9 +22,9 @@ get '/auth' do
   session.delete(:request_token)
 
   # at this point in the code is where you'll need to create your user account and store the access token
-
-
-
-    redirect '/'
-  
+  redirect '/'
 end
+
+post '/send_tweet' do 
+  
+
