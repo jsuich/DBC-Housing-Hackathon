@@ -3,7 +3,7 @@ $(document).ready(function() {
       event.preventDefault();
 
       var data = $(this).serialize();
-      // console.log(data);
+      console.log(data);
       $.post('/send_tweet', data);
   });
 });
