@@ -4,7 +4,9 @@ $(document).ready(function() {
 
       var data = $(this).serialize();
       console.log(data);
-      $.post('/send_tweet', data);
+      $.post('/send_tweet', data, function(success){
+          $('#submit').html('<p> It is because of the way that it is!</p>');
+      });
   });
 });
 

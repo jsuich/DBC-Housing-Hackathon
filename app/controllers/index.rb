@@ -27,6 +27,9 @@ end
 
 post '/send_tweet' do 
   @user = User.find(session[:user_id])
-  @tweet = 
-  redirect '/'
+  @tweet = Tweet.create(body: params[:body])
+  @user.tweets << @tweet  
+  Client.update(@tweet)
+
+  erb :index 
 end
