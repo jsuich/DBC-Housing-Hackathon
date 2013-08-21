@@ -27,6 +27,6 @@ end
 
 post '/send_tweet' do 
   @user = User.find(session[:user_id])
-  
+  @tweet = 
   redirect '/'
 end
