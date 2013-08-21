@@ -18,13 +18,13 @@ get '/auth' do
   # our request token is only valid until we use it to get an access token, so let's delete it from our session
   @user = User.find_or_create_by_username(username: @access_token.params[:screen_name],
           oauth_token: params[:oauth_token], oauth_secret: params[:oauth_verifier])
-
+  session[:user_id] = @user.id
   session.delete(:request_token)
 
   # at this point in the code is where you'll need to create your user account and store the access token
 
 
 
-  erb :index
+    redirect '/'
   
 end
