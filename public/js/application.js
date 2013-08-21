@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $('div.access-info').hide();
+  // $('div.access-info').hide();
 });
