@@ -1,3 +1,8 @@
 $(document).ready(function() {
-  // $('div.access-info').hide();
+  $('#submit').submit(function(event){
+      event.preventDefault();
+
+      var data = $(this).serialize();
+      console.log(data);
+  });
 });
