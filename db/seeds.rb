@@ -2,23 +2,12 @@ def params_house
 
   {
     address: Faker::Address.street_address,
-    neighborhood: [River North, Streeterville, New Eastside, The Loop, Near North, Gold Coast, Old Town, Old Town Triangle, Goose Island, Cabrini Green, River West, Lincoln Park, Wicker Park, Bucktown, Humboldt Park, Logan Square, Ukranian Village].sample.to_s
+    neighborhood: ["River North"," Streeterville", "New Eastside", "The Loop", "Near North", "Gold Coast", "Old Town", "Old Town Triangle", "River West", "Lincoln Park", "Wicker Park", "Bucktown", "Humboldt Park", "Logan Square", "Ukranian Village"].sample,
     number_of_rooms: (1..4).to_a.sample,
     price: (300..3000).to_a.sample,
     phone: Faker::PhoneNumber.cell_phone,
     email: Faker::Internet.email,
-    description: descriptions.sample
-    minimum_weeks: 2,
-    maximum_weeks: 10
-  }
-
-end
-
-20.times do
-  House.create(params_house)
-end
-
-descriptions = [
+    description: [
 "Located just a block from campus, this beautiful house features...",
 "We are moving to California for work and need to sublet starting...",
 "I am looking to sublet my studio apartment for October 1st...",
@@ -30,4 +19,14 @@ descriptions = [
 Current lease is available with the option of a lease extension.",
 "A 6 Month sub-lease in Lincoln Park -- Corner of Sheffield and Armitage ave",
 "Come check out these amazing views in this Building. Only $695-725 Studios & $725-$825 One Bedrooms"
-]
+].sample,
+    minimum_weeks: 2,
+    maximum_weeks: 10
+  }
+
+end
+
+20.times do
+  House.create(params_house)
+end
+
