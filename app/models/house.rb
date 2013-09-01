@@ -1,6 +1,6 @@
 class House < ActiveRecord::Base
   
-  def ten_house_report
+  def self.ten_house_report
   	House.last(10)
   end
 
