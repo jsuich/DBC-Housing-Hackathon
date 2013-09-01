@@ -20,7 +20,7 @@ end
 
 get '/houses/:id' do
   @house = House.find(params[:id])
-  erb :house_by_id
+  erb :house
 end
 
 get '/sign_in' do
