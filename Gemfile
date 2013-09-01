@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 # PostgreSQL driver
 gem 'pg'
-
+gem 'faker'
 # Sinatra driver
 gem 'sinatra'
 
