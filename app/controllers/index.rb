@@ -1,5 +1,26 @@
 get '/' do
+
+  if logged_in?
+    redirect '/index'
+  else
+    redirect '/sign_in'
+  end
+  
+end
+
+get '/index' do
+  @houses = ten_house_report #(Last 10 houses made)
   erb :index
+end
+
+
+get '/houses/new' do
+  erb :new_house_form
+end
+
+get '/houses/:id' do
+  @house = House.find(params[:id])
+  erb :house
 end
 
 get '/sign_in' do
@@ -28,3 +49,14 @@ get '/auth' do
   redirect '/'
 end
 
+## POSTS ##
+
+post '/houses/new' do
+  # => @house = House.create(params:[form_input])
+  redirect '/houses/:id'
+end
+
+post '/houses/:id' do
+  @house = House.create(params[:house])
+  redirect "/houses/#{@house.id}"
+end

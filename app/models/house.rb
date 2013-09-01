@@ -1,3 +1,7 @@
 class House < ActiveRecord::Base
-  # Remember to create a migration!
+  
+  def ten_house_report
+  	House.last(10)
+  end
+
 end
