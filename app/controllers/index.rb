@@ -19,7 +19,7 @@ get '/houses/new' do
 end
 
 get '/houses/:id' do
-
+  @house = House.find(params[:id])
   erb :house_by_id
 end
 
@@ -57,6 +57,6 @@ post '/houses/new' do
 end
 
 post '/houses/:id' do
-  House.create
-  erb :house_by_id
+  @house = House.create(params[:house])
+  redirect "/houses/#{@house.id}"
 end
