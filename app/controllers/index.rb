@@ -28,13 +28,3 @@ get '/auth' do
   redirect '/'
 end
 
-post '/send_tweet' do 
-  @user = User.find(session[:user_id])
-  @tweet = Tweet.create(body: params[:body])
-  @user.tweets << @tweet
-  client = twitter_client
-
-  client.update(@tweet.body) 
-
-  erb :index 
-end
