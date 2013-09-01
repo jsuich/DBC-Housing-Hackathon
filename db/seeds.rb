@@ -4,7 +4,7 @@ def params_house
     address: Faker::Address.street_address,
     neighborhood: Faker::Address.city,
     number_of_rooms: (1..5).to_a.sample,
-    price: (1000..3000).to_a.sample,
+    price: (300..3000).to_a.sample,
     phone: Faker::PhoneNumber.cell_phone,
     email: Faker::Internet.email,
     description: Faker::Lorem.paragraph(10),

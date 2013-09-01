@@ -1,5 +1,28 @@
 get '/' do
+
+  if logged_in?
+    redirect '/index'
+  else
+    redirect '/sign_in'
+  end
+  
+end
+
+get '/index' do
   erb :index
+end
+
+get '/houses' do
+  erb :houses_all
+end
+
+
+get '/houses/new' do
+  erb :houses_new
+end
+
+get '/houses/:id'
+  erb :house_by_id
 end
 
 get '/sign_in' do
@@ -28,3 +51,9 @@ get '/auth' do
   redirect '/'
 end
 
+## POSTS ##
+
+post '/houses/:id'
+  House.create
+  erb :house_by_id
+end
