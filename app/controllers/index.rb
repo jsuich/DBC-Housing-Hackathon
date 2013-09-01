@@ -9,19 +9,17 @@ get '/' do
 end
 
 get '/index' do
+  @houses = ten_house_report #(Last 10 houses made)
   erb :index
-end
-
-get '/houses' do
-  erb :houses_all
 end
 
 
 get '/houses/new' do
-  erb :houses_new
+  erb :new_house_form
 end
 
-get '/houses/:id'
+get '/houses/:id' do
+
   erb :house_by_id
 end
 
@@ -53,7 +51,12 @@ end
 
 ## POSTS ##
 
-post '/houses/:id'
+post '/houses/new' do
+  # => @house = House.create(params:[form_input])
+  redirect '/houses/:id'
+end
+
+post '/houses/:id' do
   House.create
   erb :house_by_id
 end
