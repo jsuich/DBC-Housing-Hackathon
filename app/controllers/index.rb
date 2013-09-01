@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/index' do
-  @houses = ten_house_report #(Last 10 houses made)
+  @houses = House.ten_house_report #(Last 10 houses made)
   erb :index
 end
 
