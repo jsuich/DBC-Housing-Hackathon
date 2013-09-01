@@ -1,9 +1,8 @@
 GIT
   remote: https://github.com/sferik/twitter.git
-  revision: 8faa15309d906dd46fccc1b914ea4aa7a5da7c2d
+  revision: 6bc4fedf7de82ca093061f57c921be7ed56bf986
   specs:
     twitter (4.8.1)
-      celluloid (~> 0.14.0)
       faraday (~> 0.8, < 0.10)
       simple_oauth (~> 0.2)
 
@@ -28,8 +27,6 @@ GEM
     arel (4.0.0)
     atomic (1.1.13)
     builder (3.1.4)
-    celluloid (0.14.1)
-      timers (>= 1.0.0)
     daemons (1.1.9)
     diff-lcs (1.2.4)
     eventmachine (1.0.3)
@@ -69,7 +66,6 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
-    timers (1.1.0)
     tzinfo (0.3.37)
 
 PLATFORMS
